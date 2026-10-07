@@ -143,5 +143,43 @@ namespace Cine.Web.Controllers
             }
         }
 
+        public ActionResult Borrar(int id)
+        {
+            PeliculaVM peli = null;
+            var peliDDBB = _peliRepo.ObtenerPorID(id);
+            peli = new PeliculaVM
+            {
+                Id = peliDDBB.IdPelicula,
+                Titulo = peliDDBB.Titulo,
+                DuracionMin = peliDDBB.DuracionMin,
+                FechaFuncion = peliDDBB.FechaFuncion,
+                NumeroSala = peliDDBB.NumeroSala,
+                Precio = peliDDBB.Precio
+            };
+
+
+
+            return View(peli);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken] 
+        public ActionResult Borrar(int id, IFormCollection col)
+        {
+            try
+            {
+                var peli = _peliRepo.ObtenerPorID(id);
+                peli.Borrado = true;
+                _peliRepo.ActualizarPeliculas(peli);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                ModelState.AddModelError("", "No se pudo borrar la película");
+                return View();
+            }
+    
+        }
+
     }
 }

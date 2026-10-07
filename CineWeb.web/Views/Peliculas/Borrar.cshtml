@@ -1,5 +1,14 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Cine.Web.Models;
+@model PeliculaVM
+
+<form asp-action="Borrar" asp-route-id="@Model.Id">
+    <h1 style="font-color:red">Borrar Película?</h1>
+    <label>Título</label>
+    <p>@Model.Titulo</p>
+
+    <label>Fecha de La Función</label>
+    <p>@Model.FechaFuncion</p>
+
+    <input type="submit" value="Borrar" />
+
+</form>
