@@ -1,0 +1,34 @@
+﻿@using Cine.Web.Models;
+@model PeliculaVM
+
+
+<form asp-action="Editar">
+
+    <label asp-for="Titulo"></label>
+    <input asp-for="Titulo" />
+    <span asp-validation-for="Titulo" style="font-color:red"></span>
+    <br />
+    <label asp-for="DuracionMin"></label>
+    <input asp-for="DuracionMin" />
+    <span asp-validation-for="DuracionMin"></span>
+    <br />
+    <label asp-for="FechaFuncion"></label>
+    <input asp-for="FechaFuncion" />
+    <span asp-validation-for="FechaFuncion"></span>
+    <br />
+    <label asp-for="NumeroSala"></label>
+    <input asp-for="NumeroSala" />
+    <span asp-validation-for="NumeroSala"></span>
+    <br />
+    <label asp-for="Precio"></label>
+    <input asp-for="Precio" />
+    <span asp-validation-for="Precio"></span>
+    <br />
+
+ 
+
+    <br />
+    <input type="submit" value="Editar" />
+
+    <br />
+</form>

@@ -8,14 +8,19 @@
 		<th>Titulo</th>
 		<th>Fecha</th>
 		<th>Duración</th>
+		<th>Precio</th>
 	</tr>
 
 	@foreach (var pelicula in Model)
 	{
 		<tr>
+			<td><a href="/Peliculas/Editar/@pelicula.Id">Editar</a>
+				<a href="/Peliculas/Ver/@pelicula.Id">Ver</a>
+			</td>
 			<td>@pelicula.Titulo</td>
 			<td>@pelicula.FechaFuncion</td>
 			<td>@pelicula.DuracionMin</td>
+			<td>@pelicula.Precio</td>
 		</tr>
 
 	}

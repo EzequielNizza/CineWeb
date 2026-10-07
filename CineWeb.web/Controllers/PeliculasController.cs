@@ -46,6 +46,24 @@ namespace Cine.Web.Controllers
             return View(pelis);
         }
 
+        public ActionResult Ver(int id)
+        {
+            PeliculaVM peli = null;
+            var peliDDBB = _peliRepo.ObtenerPorID(id);
+            peli = new PeliculaVM
+            {
+                Id = peliDDBB.IdPelicula,
+                Titulo = peliDDBB.Titulo,
+                DuracionMin = peliDDBB.DuracionMin,
+                FechaFuncion = peliDDBB.FechaFuncion,
+                NumeroSala = peliDDBB.NumeroSala,
+                Precio = peliDDBB.Precio
+            };
+            return View(peli);
+        }
+
+
+
         public ActionResult Agregar()
         {
             PeliculaAltaVM peli = new PeliculaAltaVM();
@@ -82,5 +100,48 @@ namespace Cine.Web.Controllers
             }
             return View(peli);
         }
+
+        public ActionResult Editar(int id)
+        {
+            PeliculaVM peli = null;
+            var peliDDBB = _peliRepo.ObtenerPorID(id);
+            peli = new PeliculaVM
+            {
+                Id = peliDDBB.IdPelicula,
+                Titulo = peliDDBB.Titulo,
+                DuracionMin = peliDDBB.DuracionMin,
+                FechaFuncion = peliDDBB.FechaFuncion,
+                NumeroSala = peliDDBB.NumeroSala,
+                Precio = peliDDBB.Precio
+            };
+
+
+
+            return View(peli);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Editar(int id, PeliculaVM peliEditada)
+        {
+            try
+            {
+                Pelicula peliAModificar = new Pelicula();
+                peliAModificar.IdPelicula = peliEditada.Id;
+                peliAModificar.Titulo = peliEditada.Titulo;
+                peliAModificar.DuracionMin = peliEditada.DuracionMin;
+                peliAModificar.FechaFuncion = peliEditada.FechaFuncion;
+                peliAModificar.Precio = peliEditada.Precio;
+                _peliRepo.ActualizarPeliculas(peliAModificar);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "No se pudo actualizar la película: " + ex.Message);
+                return View(peliEditada);
+            }
+        }
+
     }
 }
