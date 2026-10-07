@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CineWeb.data/Cine.data.csproj" DisplayName="Cine.Data" />
+  <Project Path="CineWeb.web/Cine.web.csproj" DisplayName="Cine.Web" />
+</Solution>
