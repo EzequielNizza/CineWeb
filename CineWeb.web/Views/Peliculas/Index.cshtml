@@ -2,10 +2,9 @@
 @model List<PeliculaVM>
 
 <h1>Index de Películas</h1>
-<a href="Agregar">Agregar Película</a>
+<a href="/Peliculas/Agregar">Agregar Película</a>
 <table style="font-size:24px">
 	<tr>
-		<th>Id</th>
 		<th>Titulo</th>
 		<th>Fecha</th>
 		<th>Duración</th>
@@ -15,7 +14,6 @@
 	{
 		<tr>
 			<td>@pelicula.Titulo</td>
-			<td>@pelicula.DuracionMin</td>
 			<td>@pelicula.FechaFuncion</td>
 			<td>@pelicula.DuracionMin</td>
 		</tr>

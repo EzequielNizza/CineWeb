@@ -1,4 +1,5 @@
 ﻿using Cine.Data.Context;
+using Cine.Data.Repos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,7 +15,7 @@ namespace Cine.Data.Inyecciones
         {
             services.AddDbContext<PeliculasContext>(o =>
                 o.UseSqlServer(connectionString));
-            services.AddScoped<PeliculasContext, PeliculasContext>();
+            services.AddScoped<IPeliculaRepository, PeliculaRepository>();
             return services;
         }
     }
