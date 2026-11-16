@@ -19,6 +19,6 @@ Asignación de Roles: Una vez creado su usuario, se podrá asignar los roles de 
 Iniciar Microsoft SQL Server Manager Studio.
 Generar nueva consulta sobre CibeDB.
 Insertar la siguiente query en la consulta:
-INSERT INTO UsuariosRoles (IdUsuario, IdRol) SELECT u.IdUsuario, r.IdRol FROM Usuarios u CROSS JOIN Roles r WHERE u.Email = '(correo electrónico)' AND r.Descripcion = '(ID)'
+INSERT INTO UsuariosRoles (IdUsuario, IdRol) SELECT u.IdUsuario, r.IdRol FROM Usuarios u CROSS JOIN Roles r WHERE u.Email = '(correo electrónico)' AND r.IdRol = '(ID)'
 
 Una vez confirmado el cambio, cerrar la sesión activa con ese correo y volver a iniciar.
