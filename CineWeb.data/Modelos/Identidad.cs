@@ -18,7 +18,7 @@ namespace Cine.data.Modelos
         [Required]
         public int IdRol { get; set; }
         [ForeignKey(nameof(IdRol))]
-        public Rol Rol { get; set; } 
+        public Rol Rol { get; set; }
     }
 
     [Table("Roles")]

@@ -12,7 +12,7 @@ namespace Cine.data.Modelos
     {
         [Key]
         public int IdPelicula { get; set; }
-        
+
         [Required]
         [StringLength(100)]
         public string Titulo { get; set; }

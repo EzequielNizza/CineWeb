@@ -2,32 +2,32 @@
 @model SalaAltaVM
 
 @{
-    string resultadomsj = ViewBag.Mensaje.ToString();
+	string resultadomsj = ViewBag.Mensaje.ToString();
 }
 
 <form asp-action="Agregar">
-    <label asp-for="CantidadButacas"></label>
-    <input asp-for="CantidadButacas" />
-    <span asp-validation-for="CantidadButacas"></span>
-    <br />
-    <input asp-for="EsIMAX" class="form-check-input" />
-    <label asp-for="EsIMAX" class="form-check-label">Es IMAX</label>
-    <br />  
-    <input asp-for="Es3D" class="form-check-input" />
-    <label asp-for="Es3D" class="form-check-label">Es 3D</label>
-    <br />
-    <input asp-for="Es4DX" class="form-check-input" />
-    <label asp-for="Es4DX" class="form-check-label">Es 4DX</label>  
+	<label asp-for="CantidadButacas"></label>
+	<input asp-for="CantidadButacas" />
+	<span asp-validation-for="CantidadButacas"></span>
+	<br />
+	<input asp-for="EsIMAX" class="form-check-input" />
+	<label asp-for="EsIMAX" class="form-check-label">Es IMAX</label>
+	<br />
+	<input asp-for="Es3D" class="form-check-input" />
+	<label asp-for="Es3D" class="form-check-label">Es 3D</label>
+	<br />
+	<input asp-for="Es4DX" class="form-check-input" />
+	<label asp-for="Es4DX" class="form-check-label">Es 4DX</label>
 
-    <br />
-    <input type="submit" value="Agregar" />
+	<br />
+	<input type="submit" value="Agregar" />
 
-    <br />
+	<br />
 
-    @{
-        if (!String.IsNullOrEmpty(resultadomsj))
-        {
-            <span>@(resultadomsj)</span>
-        }
-    }
+	@{
+		if (!String.IsNullOrEmpty(resultadomsj))
+		{
+			<span>@(resultadomsj)</span>
+		}
+	}
 </form>

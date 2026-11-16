@@ -161,7 +161,7 @@ namespace Cine.Web.Controllers
                 var sala = _salaRepo.ObtenerPorID(id);
                 if (sala != null)
                 {
-                    sala.Borrado = true; 
+                    sala.Borrado = true;
                     _salaRepo.ActualizarSala(sala);
                 }
 

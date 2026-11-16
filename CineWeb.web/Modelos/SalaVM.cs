@@ -15,7 +15,7 @@ namespace Cine.Web.Modelos
         public bool Es4DX { get; set; }
         public List<Pelicula> ListaPeliculas { get; set; }
     }
-    
+
     public class SalaAltaVM
     {
         [Required(ErrorMessage = "La cantidad de butacas es obligatoria"), Range(150, 300, ErrorMessage = "Cantidad de butacas fuera de rango")]

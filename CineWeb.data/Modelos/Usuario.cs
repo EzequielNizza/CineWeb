@@ -15,7 +15,7 @@ namespace Cine.data.Modelos
 
         [Required]
         public string Email { get; set; }
-        
+
         public DateTime FechaAlta { get; set; }
         public List<Entrada> Entradas { get; set; } = new List<Entrada>();
         public List<UsuarioRol> Roles { get; set; } = new List<UsuarioRol>();

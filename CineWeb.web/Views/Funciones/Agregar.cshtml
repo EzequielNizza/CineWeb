@@ -3,25 +3,25 @@
 
 
 <form asp-action="Agregar">
-    <label asp-for="IdPelicula">Película</label>
-    <select asp-for="IdPelicula" asp-items="Model.Peliculas">
-        <option value="">-- Seleccione --</option>
-    </select>
-    <span asp-validation-for="IdPelicula"></span>
-    <br />
+	<label asp-for="IdPelicula">Película</label>
+	<select asp-for="IdPelicula" asp-items="Model.Peliculas">
+		<option value="">-- Seleccione --</option>
+	</select>
+	<span asp-validation-for="IdPelicula"></span>
+	<br />
 
-    <label asp-for="IdSala">Sala</label>
-    <select asp-for="IdSala" asp-items="Model.Salas">
-        <option value="">-- Seleccione --</option>
-    </select>
-    <span asp-validation-for="IdSala"></span>
-    <br />
+	<label asp-for="IdSala">Sala</label>
+	<select asp-for="IdSala" asp-items="Model.Salas">
+		<option value="">-- Seleccione --</option>
+	</select>
+	<span asp-validation-for="IdSala"></span>
+	<br />
 
-    <label asp-for="FechaHora">Fecha y Hora</label>
-    <input asp-for="FechaHora" type="datetime-local" asp-format="{0:yyyy-MM-ddTHH:mm}" />
-    <span asp-validation-for="FechaHora"></span>
-    <br />
+	<label asp-for="FechaHora">Fecha y Hora</label>
+	<input asp-for="FechaHora" type="datetime-local" asp-format="{0:yyyy-MM-ddTHH:mm}" />
+	<span asp-validation-for="FechaHora"></span>
+	<br />
 
-    <input type="submit" value="Agregar" />
-    <br />
+	<input type="submit" value="Agregar" />
+	<br />
 </form>

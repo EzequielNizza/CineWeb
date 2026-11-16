@@ -1,31 +1,31 @@
 ﻿@using Cine.Web.Modelos
 @model List<EntradaCompradaVM>
 <table class="table table-striped table-bordered w-100 align-middle">
-    <thead class="table-dark">
-        <tr>
-            <th>ID Entrada</th>
-            <th>Usuario</th>
-            <th>Email</th>
-            <th>Película</th>
-            <th>Sala</th>
-            <th>Fecha Función</th>
-            <th>Precio</th>
-            <th>Fecha Compra</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.IdEntrada</td>
-                <td>@item.NombreUsuario</td>
-                <td>@item.EmailUsuario</td>
-                <td>@item.TituloPelicula</td>
-                <td>@item.IdSala</td>
-                <td>@item.FechaHoraFuncion.ToString("dd/MM/yyyy HH:mm")</td>
-                <td>$@item.PrecioEntrada</td>
-                <td>@item.FechaCompra.ToString("dd/MM/yyyy HH:mm")</td>
-            </tr>
-        }
-    </tbody>
+	<thead class="table-dark">
+		<tr>
+			<th>ID Entrada</th>
+			<th>Usuario</th>
+			<th>Email</th>
+			<th>Película</th>
+			<th>Sala</th>
+			<th>Fecha Función</th>
+			<th>Precio</th>
+			<th>Fecha Compra</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.IdEntrada</td>
+				<td>@item.NombreUsuario</td>
+				<td>@item.EmailUsuario</td>
+				<td>@item.TituloPelicula</td>
+				<td>@item.IdSala</td>
+				<td>@item.FechaHoraFuncion.ToString("dd/MM/yyyy HH:mm")</td>
+				<td>$@item.PrecioEntrada</td>
+				<td>@item.FechaCompra.ToString("dd/MM/yyyy HH:mm")</td>
+			</tr>
+		}
+	</tbody>
 </table>

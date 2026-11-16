@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace Cine.web.Controladores
 {
-   [Authorize]
+    [Authorize]
     public class EntradasController : Controller
     {
         private readonly IEntradaRepository _repo;

@@ -15,7 +15,7 @@ namespace Cine.data.Modelos
         public int IdFuncion { get; set; }
         [Required]
         public DateTime FechaHora { get; set; }
-        
+
         [Column(TypeName = "bit")]
         public bool Borrado { get; set; }
 

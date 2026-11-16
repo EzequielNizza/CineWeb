@@ -80,7 +80,7 @@ namespace Cine.Web.Controllers
                     Titulo = peli.Titulo,
                     Descripcion = peli.Descripcion,
                     DuracionMin = peli.DuracionMin
-           
+
                 };
                 bool resultado = _peliRepo.AgregarPelicula(peliDDBB);
                 if (resultado)
@@ -91,7 +91,8 @@ namespace Cine.Web.Controllers
                 {
                     ModelState.AddModelError("", "No se pudo agregar la película");
                 }
-            } else
+            }
+            else
             {
                 ModelState.AddModelError("", "Por favor, complete todos los campos requeridos");
             }
@@ -156,7 +157,7 @@ namespace Cine.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken] 
+        [ValidateAntiForgeryToken]
         public ActionResult Borrar(int id, IFormCollection col)
         {
             try
@@ -171,7 +172,7 @@ namespace Cine.Web.Controllers
                 ModelState.AddModelError("", "No se pudo borrar la película");
                 return View();
             }
-    
+
         }
 
     }

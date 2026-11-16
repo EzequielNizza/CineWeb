@@ -40,7 +40,7 @@ namespace Cine.Data.Repos
                 _db.Peliculas.Add(peli);
                 _db.SaveChanges();
                 return true;
-            } 
+            }
             catch (Exception ex)
             {
                 return false;

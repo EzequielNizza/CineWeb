@@ -16,7 +16,7 @@ namespace Cine.Data.Repos
         void ActualizarFuncion(Funcion func);
         bool EliminarFuncion(int id);
     }
- 
+
 
     public class FuncionRepository : IFuncionRepository
     {

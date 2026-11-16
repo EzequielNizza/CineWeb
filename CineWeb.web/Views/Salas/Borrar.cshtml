@@ -2,24 +2,24 @@
 @model SalaVM
 
 <form asp-action="Borrar" asp-route-id="@Model.IdSala">
-    @Html.AntiForgeryToken()
+	@Html.AntiForgeryToken()
     
-    <h1 style="color:red">Borrar Sala?</h1>
+	<h1 style="color:red">Borrar Sala?</h1>
     
-    <label>ID de Sala</label>
-    <p>@Model.IdSala</p>
+	<label>ID de Sala</label>
+	<p>@Model.IdSala</p>
 
-    <label>Cantidad de Butacas</label>
-    <p>@Model.CantidadButacas</p>
+	<label>Cantidad de Butacas</label>
+	<p>@Model.CantidadButacas</p>
 
-    <label>Es IMAX</label>
-    <p>@(Model.EsIMAX ? "Sí" : "No")</p>
+	<label>Es IMAX</label>
+	<p>@(Model.EsIMAX ? "Sí" : "No")</p>
 
-    <label>Es 3D</label>
-    <p>@(Model.Es3D ? "Sí" : "No")</p>
+	<label>Es 3D</label>
+	<p>@(Model.Es3D ? "Sí" : "No")</p>
 
-    <label>Es 4DX</label>
-    <p>@(Model.Es4DX ? "Sí" : "No")</p>
+	<label>Es 4DX</label>
+	<p>@(Model.Es4DX ? "Sí" : "No")</p>
 
-    <input type="submit" value="Borrar" />
+	<input type="submit" value="Borrar" />
 </form>

@@ -12,7 +12,7 @@ namespace Cine.Data.Modelos
     {
         [Key]
         public int IdSala { get; set; }
-        [Required, Range(150,300)]
+        [Required, Range(150, 300)]
         public int CantidadButacas { get; set; }
         [Column(TypeName = "bit")]
         public bool EsIMAX { get; set; }

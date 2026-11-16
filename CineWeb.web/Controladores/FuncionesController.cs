@@ -163,9 +163,9 @@ namespace Cine.web.Controladores
             catch (Exception ex)
             {
                 ModelState.AddModelError("", "No se pudo actualizar la función: " + ex.Message);
-                return View(funcionEditada);   
-                   
-             }
+                return View(funcionEditada);
+
+            }
         }
 
         public ActionResult Borrar(int id)
