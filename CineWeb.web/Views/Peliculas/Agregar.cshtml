@@ -1,38 +1,26 @@
 ﻿@using Cine.Web.Modelos
 @model PeliculaAltaVM
 
-@{
-    string resultadomsj = ViewBag.Mensaje.ToString();
-}
-
 <form asp-action="Agregar">
 
-    <label asp-for="Titulo"></label>
-    <input asp-for="Titulo" />
-    <span asp-validation-for="Titulo" style="font-color:red"></span>
-    <br />
-    <label asp-for="Descripcion"></label>
-    <input asp-for="Descripcion" />
-    <span asp-validation-for="Descripcion" style="font-color:red"></span>
-    <br />
-    <label asp-for="DuracionMin"></label>
-    <input asp-for="DuracionMin" />
-    <span asp-validation-for="DuracionMin"></span>
-    <br />
+	<label asp-for="Titulo"></label>
+	<input asp-for="Titulo" />
+	<span asp-validation-for="Titulo" style="font-color:red"></span>
+	<br />
+	<label asp-for="Descripcion"></label>
+	<input asp-for="Descripcion" />
+	<span asp-validation-for="Descripcion" style="font-color:red"></span>
+	<br />
+	<label asp-for="DuracionMin"></label>
+	<input asp-for="DuracionMin" />
+	<span asp-validation-for="DuracionMin"></span>
+	<br />
 
  
 
 
-    <br />
-    <input type="submit" value="Agregar" />
+	<br />
+	<input type="submit" value="Agregar" />
 
-    <br />
-
-    
-    @{
-        if (!String.IsNullOrEmpty(resultadomsj))
-        {
-            <span>@(resultadomsj)</span>
-        }
-    }
+	<br />
 </form>
