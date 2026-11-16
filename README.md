@@ -1,4 +1,7 @@
 # CineWeb
+Aclaración para el correcto funcionamiento del programa:
+Al abrir el proyecto, hacer click derecho en "Cine.Web" y luego "Establecer como proyecto de inicio".
+
 ====================
 
 Guía para instalar la base de datos:
