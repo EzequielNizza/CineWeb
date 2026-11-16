@@ -1,0 +1,23 @@
+﻿@using Cine.Web.Modelos
+@model SalaVM
+
+<form asp-action="Editar">
+    <input type="hidden" asp-for="IdSala" />
+    <label asp-for="CantidadButacas"></label>
+    <input asp-for="CantidadButacas" />
+    <span asp-validation-for="CantidadButacas"></span>
+    <br />
+    <input asp-for="EsIMAX" class="form-check-input" />
+    <label asp-for="EsIMAX" class="form-check-label">Es IMAX</label>
+    <br />
+    <input asp-for="Es3D" class="form-check-input" />
+    <label asp-for="Es3D" class="form-check-label">Es 3D</label>
+    <br />
+    <input asp-for="Es4DX" class="form-check-input" />
+    <label asp-for="Es4DX" class="form-check-label">Es 4DX</label>
+
+    <br />
+    <input type="submit" value="Editar" />
+
+    <br />
+</form>

@@ -1,4 +1,4 @@
-﻿@using Cine.Web.Models;
+﻿@using Cine.Web.Modelos
 @model PeliculaVM
 
 <form asp-action="Borrar" asp-route-id="@Model.Id">
@@ -6,8 +6,8 @@
     <label>Título</label>
     <p>@Model.Titulo</p>
 
-    <label>Fecha de La Función</label>
-    <p>@Model.FechaFuncion</p>
+    <label>Descripcion</label>
+    <p>@Model.Descripcion</p>
 
     <input type="submit" value="Borrar" />
 

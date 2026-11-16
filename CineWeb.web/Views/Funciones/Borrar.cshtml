@@ -1,0 +1,16 @@
+﻿@using Cine.Web.Modelos
+@model FuncionVM
+
+<form asp-action="Borrar">
+    <label>ID</label>
+    <p>@Model.IdFuncion</p>
+
+    <label>Título</label>
+    <p>@Model.TituloPelicula</p>
+
+    <label>Fecha y Hora</label>
+    <p>@Model.FechaHora.ToString("dd/MM/yyyy HH:mm")</p>
+
+    <input type="submit" value="Borrar" />
+
+</form>

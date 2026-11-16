@@ -1,0 +1,21 @@
+﻿@using Cine.Web.Modelos
+@model EntradaVM
+
+<form asp-action="ComprarConfirmado">
+    <input type="hidden" asp-for="IdFuncion" />
+    <input type="hidden" asp-for="PrecioEntrada" />
+
+    <label>Película</label>
+    <p>@Model.TituloPelicula</p>
+
+    <label>Sala</label>
+    <p>@Model.IdSala</p>
+
+    <label>Fecha y Hora</label>
+    <p>@Model.FechaHoraFuncion.ToString("dd/MM/yyyy HH:mm")</p>
+
+    <label>Precio</label>
+    <p>$@Model.PrecioEntrada</p>
+
+    <input type="submit" value="Comprar" />
+</form>

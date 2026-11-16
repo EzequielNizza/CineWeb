@@ -1,29 +1,78 @@
-﻿@using Cine.Web.Models
+﻿@using Cine.Web.Modelos
 @model List<PeliculaVM>
 
-<h1>Index de Películas</h1>
-<a href="/Peliculas/Agregar">Agregar Película</a>
-<table style="font-size:24px">
+<table class="table table-striped table-bordered w-100 align-middle">
+	<thead class="table-dark">
+		<tr>
+			<th>Título</th>
+			<th>Descripción</th>
+			<th>Duración (Min)</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var pelicula in Model)
+		{
+			<tr>
+				<td>@pelicula.Titulo</td>
+				<td>@pelicula.Descripcion</td>
+				<td>@pelicula.DuracionMin</td>
+				<td>
+					@if (User.HasClaim("Permiso", "peliculas.ver"))
+					{
+						<a href="/Peliculas/Ver/@pelicula.Id">Ver</a>
+					}
+					@if (User.HasClaim("Permiso", "peliculas.editar"))
+					{
+						<a href="/Peliculas/Editar/@pelicula.Id">Editar</a>
+					}
+					@if (User.HasClaim("Permiso", "peliculas.eliminar"))
+					{
+						<a href="/Peliculas/Borrar/@pelicula.Id">Borrar</a>
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@* <table style="font-size:24px">
+	@if (User.HasClaim("Permiso", "peliculas.crear"))
+	{
+		<a href="/Peliculas/Agregar">Agregar Película</a>
+	}
 	<tr>
-		<th>Titulo</th>
-		<th>Fecha</th>
-		<th>Duración</th>
-		<th>Precio</th>
+		<th>Título</th>
+		<th>Descripción</th>
+		<th>Duración (Min)</th>
 	</tr>
 
 	@foreach (var pelicula in Model)
 	{
 		<tr>
-			<td><a href="/Peliculas/Editar/@pelicula.Id">Editar</a>
-				<a href="/Peliculas/Ver/@pelicula.Id">Ver</a>
-				<a href="/Peliculas/Borrar/@pelicula.Id">Borrar</a>
-			</td>
 			<td>@pelicula.Titulo</td>
-			<td>@pelicula.FechaFuncion</td>
+			<td>@pelicula.Descripcion</td>
 			<td>@pelicula.DuracionMin</td>
-			<td>@pelicula.Precio</td>
+			<td>
+			@if (User.HasClaim("Permiso", "peliculas.ver"))
+			{
+				<a href="/Peliculas/Ver/@pelicula.Id">Ver</a>
+			}
+			@if (User.HasClaim("Permiso", "peliculas.editar"))
+			{
+				<a href="/Peliculas/Editar/@pelicula.Id">Editar</a>
+			}
+			@if (User.HasClaim("Permiso", "peliculas.eliminar"))
+			{
+				<a href="/Peliculas/Borrar/@pelicula.Id">Borrar</a>
+			}
+
+			</td>
+
+			
+
 		</tr>
 
 	}
 
-</table>
+</table> *@

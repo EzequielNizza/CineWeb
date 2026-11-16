@@ -2,7 +2,7 @@ using CineWeb.web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace CineWeb.web.Controllers
+namespace CineWeb.Web.Controllers
 {
     public class HomeController : Controller
     {

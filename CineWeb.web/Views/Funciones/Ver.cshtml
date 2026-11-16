@@ -1,0 +1,30 @@
+﻿@using Cine.Web.Modelos
+@model FuncionVM
+
+<label>ID de Función</label>
+<p>@Model.IdFuncion</p>
+
+<label>Película</label>
+<p>@Model.TituloPelicula</p>
+
+<label>Duración (Min)</label>
+<p>@Model.DuracionPelicula</p>
+
+<label>Fecha y Hora</label>
+<p>@Model.FechaHora.ToString("dd/MM/yyyy HH:mm")</p>
+
+<label>Sala</label>
+<p>@Model.IdSala</p>
+
+<label>Cantidad de Butacas</label>
+<p>@Model.CantidadButacas</p>
+
+<label>Es IMAX</label>
+<p>@(Model.EsIMAX ? "Sí" : "No")</p>
+
+<label>Es 3D</label>
+<p>@(Model.Es3D ? "Sí" : "No")</p>
+
+<label>Es 4DX</label>
+<p>@(Model.Es4DX ? "Sí" : "No")</p>
+

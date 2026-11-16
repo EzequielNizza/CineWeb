@@ -1,0 +1,27 @@
+﻿@using Cine.Web.Modelos
+@model FuncionVM
+
+
+<form asp-action="Editar">
+
+    <input type="hidden" asp-for="IdFuncion" />
+    <input type="hidden" asp-for="IdPelicula" />
+    <input type="hidden" asp-for="IdSala" />
+
+    <label>Película</label>
+    <p>@Model.TituloPelicula</p>
+
+    <label>Sala</label>
+    <p>@Model.IdSala</p>
+
+    <label asp-for="FechaHora">Fecha y Hora</label>
+    <input asp-for="FechaHora" type="datetime-local" asp-format="{0:yyyy-MM-ddTHH:mm}" />
+    <span asp-validation-for="FechaHora"></span>
+    <br />
+
+
+
+
+    <input type="submit" value="Editar" />
+    <br />
+</form>

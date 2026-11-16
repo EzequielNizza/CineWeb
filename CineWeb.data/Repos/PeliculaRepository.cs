@@ -12,9 +12,9 @@ namespace Cine.Data.Repos
     {
         List<Pelicula> ObtenerPeliculas();
         Pelicula? ObtenerPorID(int id);
-        bool AgregarPeliculas(Pelicula peli);
-        void ActualizarPeliculas(Pelicula peli);
-        bool EliminarPeliculas(int id);
+        bool AgregarPelicula(Pelicula peli);
+        void ActualizarPelicula(Pelicula peli);
+        bool EliminarPelicula(int id);
 
     }
 
@@ -27,13 +27,13 @@ namespace Cine.Data.Repos
             _db = context;
         }
 
-        public void ActualizarPeliculas(Pelicula peli)
+        public void ActualizarPelicula(Pelicula peli)
         {
             _db.Peliculas.Update(peli);
             _db.SaveChanges();
         }
 
-        public bool AgregarPeliculas(Pelicula peli)
+        public bool AgregarPelicula(Pelicula peli)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace Cine.Data.Repos
             }
         }
 
-        public bool EliminarPeliculas(int id)
+        public bool EliminarPelicula(int id)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace Cine.Data.Repos
 
         public List<Pelicula> ObtenerPeliculas()
         {
-            return _db.Peliculas.ToList();
+            return _db.Peliculas.Where(p => !p.Borrado).ToList();
         }
 
         public Pelicula? ObtenerPorID(int id)

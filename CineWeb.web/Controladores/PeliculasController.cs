@@ -2,7 +2,7 @@
 using Cine.Data.Repos;
 using Cine.Data.Context;
 using Cine.Data.Inyecciones;
-using Cine.Web.Models;
+using Cine.Web.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
@@ -39,7 +39,7 @@ namespace Cine.Web.Controllers
             {
                 Id = x.IdPelicula,
                 Titulo = x.Titulo,
-                FechaFuncion = x.FechaFuncion,
+                Descripcion = x.Descripcion,
                 DuracionMin = x.DuracionMin
 
             }).ToList();
@@ -54,10 +54,8 @@ namespace Cine.Web.Controllers
             {
                 Id = peliDDBB.IdPelicula,
                 Titulo = peliDDBB.Titulo,
-                DuracionMin = peliDDBB.DuracionMin,
-                FechaFuncion = peliDDBB.FechaFuncion,
-                NumeroSala = peliDDBB.NumeroSala,
-                Precio = peliDDBB.Precio
+                Descripcion = peliDDBB.Descripcion,
+                DuracionMin = peliDDBB.DuracionMin
             };
             return View(peli);
         }
@@ -80,12 +78,11 @@ namespace Cine.Web.Controllers
                 Pelicula peliDDBB = new Pelicula
                 {
                     Titulo = peli.Titulo,
-                    DuracionMin = peli.DuracionMin,
-                    FechaFuncion = peli.FechaFuncion,
-                    NumeroSala = peli.NumeroSala,
-                    Precio = peli.Precio,
+                    Descripcion = peli.Descripcion,
+                    DuracionMin = peli.DuracionMin
+           
                 };
-                bool resultado = _peliRepo.AgregarPeliculas(peliDDBB);
+                bool resultado = _peliRepo.AgregarPelicula(peliDDBB);
                 if (resultado)
                 {
                     return RedirectToAction("Index");
@@ -109,10 +106,8 @@ namespace Cine.Web.Controllers
             {
                 Id = peliDDBB.IdPelicula,
                 Titulo = peliDDBB.Titulo,
-                DuracionMin = peliDDBB.DuracionMin,
-                FechaFuncion = peliDDBB.FechaFuncion,
-                NumeroSala = peliDDBB.NumeroSala,
-                Precio = peliDDBB.Precio
+                Descripcion = peliDDBB.Descripcion,
+                DuracionMin = peliDDBB.DuracionMin
             };
 
 
@@ -130,10 +125,10 @@ namespace Cine.Web.Controllers
                 Pelicula peliAModificar = new Pelicula();
                 peliAModificar.IdPelicula = peliEditada.Id;
                 peliAModificar.Titulo = peliEditada.Titulo;
+                peliAModificar.Descripcion = peliEditada.Descripcion;
                 peliAModificar.DuracionMin = peliEditada.DuracionMin;
-                peliAModificar.FechaFuncion = peliEditada.FechaFuncion;
-                peliAModificar.Precio = peliEditada.Precio;
-                _peliRepo.ActualizarPeliculas(peliAModificar);
+
+                _peliRepo.ActualizarPelicula(peliAModificar);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -151,10 +146,8 @@ namespace Cine.Web.Controllers
             {
                 Id = peliDDBB.IdPelicula,
                 Titulo = peliDDBB.Titulo,
-                DuracionMin = peliDDBB.DuracionMin,
-                FechaFuncion = peliDDBB.FechaFuncion,
-                NumeroSala = peliDDBB.NumeroSala,
-                Precio = peliDDBB.Precio
+                Descripcion = peliDDBB.Descripcion,
+
             };
 
 
@@ -170,7 +163,7 @@ namespace Cine.Web.Controllers
             {
                 var peli = _peliRepo.ObtenerPorID(id);
                 peli.Borrado = true;
-                _peliRepo.ActualizarPeliculas(peli);
+                _peliRepo.ActualizarPelicula(peli);
                 return RedirectToAction(nameof(Index));
             }
             catch

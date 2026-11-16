@@ -1,0 +1,87 @@
+﻿@using Cine.Web.Modelos
+@model List<FuncionVM>
+
+<h1>Index de Funciones</h1>
+	@if (User.HasClaim("Permiso", "funciones.crear"))
+{
+	<a href="/Funciones/Agregar">Agregar Función</a>
+}
+
+
+<table class="table table-striped table-bordered w-100 align-middle">
+	<thead class="table-dark">
+		<tr>
+			<th>ID</th>
+			<th>Título</th>
+			<th>Fecha y Hora</th>
+			<th>Número de Sala</th>
+			<th>Acciones</th> 
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var funcion in Model)
+		{
+			<tr>
+				<td>@funcion.IdFuncion</td>
+				<td>@funcion.TituloPelicula</td>
+				<td>@funcion.FechaHora.ToString("dd/MM/yyyy HH:mm")</td>
+				<td>@funcion.IdSala</td>
+				<td>
+					@if (User.HasClaim("Permiso", "funciones.ver"))
+					{
+						<a href="/Funciones/Ver/@funcion.IdFuncion">Ver</a>
+					}
+					@if (User.HasClaim("Permiso", "funciones.editar"))
+					{
+						<a href="/Funciones/Editar/@funcion.IdFuncion">Editar</a>
+					}
+					@if (User.HasClaim("Permiso", "funciones.eliminar"))
+					{
+						<a href="/Funciones/Borrar/@funcion.IdFuncion">Borrar</a>
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@* <table style="font-size:24px">
+	<tr>
+		<th>ID</th>
+		<th>Título</th>
+		<th>Fecha y Hora</th>
+		<th>Número de Sala</th>
+		<th>Acciones</th>
+	</tr>
+
+	@foreach (var funcion in Model)
+	{
+		<tr>
+			<td>@funcion.IdFuncion</td>
+			<td>@funcion.TituloPelicula</td>
+			<td>@funcion.FechaHora.ToString("dd/MM/yyyy HH:mm")</td>
+			<td>@funcion.IdSala</td>
+			<td>
+
+				@if (User.HasClaim("Permiso", "funciones.ver"))
+				{
+					<a href="/Funciones/Ver/@funcion.IdFuncion">Ver</a>
+				}
+				@if (User.HasClaim("Permiso", "funciones.editar"))
+				{
+					<a href="/Funciones/Editar/@funcion.IdFuncion">Editar</a>
+				}
+				@if (User.HasClaim("Permiso", "funciones.eliminar"))
+				{
+					<a href="/Funciones/Borrar/@funcion.IdFuncion">Borrar</a>
+				}
+
+			</td>
+
+			
+
+		</tr>
+
+	}
+
+</table> *@

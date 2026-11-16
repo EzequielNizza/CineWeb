@@ -26,6 +26,44 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                                
+                            @if (User.Claims.Any(x => x.Type == "Permiso" && x.Value == "peliculas.ver"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Peliculas" asp-action="Index">Peliculas</a>
+                                </li>
+                            }
+                            @if (User.Claims.Any(x => x.Type == "Permiso" && x.Value == "salas.ver"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Salas" asp-action="Index">Salas</a>
+                                </li>
+                            }
+                            @if (User.Claims.Any(x => x.Type == "Permiso" && x.Value == "funciones.ver"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Funciones" asp-action="Index">Funciones</a>
+                                </li>
+                            }
+                            @if (User.Claims.Any(x => x.Type == "Permiso" && x.Value == "entradas.comprar"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Entradas" asp-action="Index">Entradas</a>
+                                </li>
+                            }
+                            @if (User.Claims.Any(x => x.Type == "Permiso" && x.Value == "entradas.vertodas"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="EntradasCompradas" asp-action="Index">Entradas Compradas</a>
+                                </li>
+                            }
+
+                        }
+
+
                     </ul>
                 </div>
             </div>
