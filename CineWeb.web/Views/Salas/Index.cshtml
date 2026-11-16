@@ -1,6 +1,12 @@
 ﻿@using Cine.Web.Modelos
 @model List<SalaVM>
 
+<h1>Index de Salas</h1>
+	@if (User.HasClaim("Permiso", "salas.crear"))
+{
+	<a href="/Salas/Agregar">Agregar Sala</a>
+}
+
 <table class="table table-striped table-bordered w-100 align-middle">
 	<thead class="table-dark">
 		<tr>
