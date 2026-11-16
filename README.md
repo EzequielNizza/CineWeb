@@ -20,6 +20,6 @@ SELECT u.IdUsuario, r.IdRol
 FROM Usuarios u
 CROSS JOIN Roles r
 WHERE u.Email = '(correo electrónico)'
-  AND r.Descripcion = '(ID)'
+  AND r.IdRol = '(ID)'
 
   4. Una vez confirmado el cambio, cerrar la sesión activa con ese correo y volver a iniciar.
