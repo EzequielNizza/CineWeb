@@ -1,10 +1,6 @@
 ﻿@using Cine.Web.Modelos
 @model SalaAltaVM
 
-@{
-	string resultadomsj = ViewBag.Mensaje.ToString();
-}
-
 <form asp-action="Agregar">
 	<label asp-for="CantidadButacas"></label>
 	<input asp-for="CantidadButacas" />
@@ -23,11 +19,4 @@
 	<input type="submit" value="Agregar" />
 
 	<br />
-
-	@{
-		if (!String.IsNullOrEmpty(resultadomsj))
-		{
-			<span>@(resultadomsj)</span>
-		}
-	}
 </form>
